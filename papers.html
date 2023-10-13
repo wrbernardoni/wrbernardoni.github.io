@@ -1,0 +1,17 @@
+---
+layout: default
+title: Papers
+---
+
+<h1>Papers</h1>
+<ul>
+{% for item in site.data.papers %}
+    <li>{{item.date}} - <strong><a href="{{ item.link }}">{{item.name}}</a></li></strong> by {{item.authors}}
+    <br>
+    <em>{{item.status}}</em>
+    <br>
+    <small>{{item.description}}</small>
+    <br>
+    
+{% endfor %}
+</ul>

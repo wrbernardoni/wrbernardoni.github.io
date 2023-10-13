@@ -1,7 +1,78 @@
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
-</html>
+---
+layout: default
+title: Home
+---
+
+<h1>William Bernardoni</h1>
+<div class="box">
+<img src="assets/images/Headshot.png" alt="A photo of William Bernardoni at NASA Glenn Research Center" id="headshot">
+<p>
+PhD Candidate at Case Western Reserve University
+</p>
+<p>
+	Contact me by email - wrb37(at)case.edu - <a href="https://twitter.com/billybernardon1">twitter</a>, <a href="https://github.com/wrbernardoni/">github push</a> or smoke signal!
+</p>
+</div>
+
+<h2>About me and my research</h2>
+<p>
+	My current focus is on developing an algebraic geometry of <a href="https://ncatlab.org/nlab/show/idempotent+semiring">idempotent semirings</a>. An <a href="https://ncatlab.org/nlab/show/idempotent+semiring">idempotent semirings</a> is a <a href="https://en.wikipedia.org/wiki/Semiring">semiring</a> such that \(a + a = a\) for all \(a\). Idempotent semirings have a number of applications in economic theory, the theory of computation and formal languages, algebraic geometry (see <a href="https://en.wikipedia.org/wiki/Tropical_geometry">tropical geometry</a>).
+</p>
+
+<p>
+	In my work so far I have used the geometry of idempotent semirings to create tools to model and study deep space satellite networks, as well as <a href="https://arxiv.org/abs/2305.08697">generalized some ideas from topical geometry to apply in a non-commutative geometric setting</a>.
+</p>
+
+<p>
+	I am a mostly pure mathematician, however I have a background in computer science (particularly in the field of statistical machine translation), and I love to leverage that background into finding applications of algebraic theory.
+</p>
+
+<h2>Papers</h2>
+Brief explanations of each paper are available under the <a href="/papers.html">paper tab.</a>
+<ul>
+{% for item in site.data.papers %}
+    <li>{{item.date}} - <strong><a href="{{ item.link }}" >{{item.name}}</a></li></strong> by {{item.authors}}
+    <br>
+    <em>{{item.status}}</em>
+{% endfor %}
+</ul>
+
+<h2>Talks</h2>
+<dl>
+	{% for item in site.data.talks %}
+    <dt>{{item.date}}</dt>
+    	{% for t in item.tks %}
+    	<dd>
+    		{% if t.conference %}<strong>{{t.conference}}</strong>, {% if t.where %} {{t.where}}{% endif %}{% elsif t.where %} <strong>{{t.where}}</strong>{% endif %}{% if t.name %}: <em>{{t.name}}</em> {% endif %}
+    		{% if t.details %}
+    		<br>
+    		<small>{{t.details}}</small>
+    		{% endif %}
+    	</dd>
+    	{% endfor %}
+	{% endfor %}
+</dl>
+
+<h2>Teaching</h2>
+<dl>
+	{% for item in site.data.teaching %}
+    <dt>{{item.institute}}</dt>
+    	<dl>
+    	{% for t in item.semesters %}
+    	<dd>
+    		<dl>
+    			<dt>{{t.semester}}</dt>
+    			{% for c in t.courses %}
+    			<dd>
+    				{% if c.code %} <strong>{{c.code}}:</strong> {% endif %} <em>{{c.name}}</em>
+    				{% if c.details %}
+    					<br><small>{{c.details}}</small>
+    				{% endif %}
+    			</dd>
+    			{% endfor %}
+    		</dl>
+    	</dd>
+    	{% endfor %}
+    	</dl>
+	{% endfor %}
+</dl>

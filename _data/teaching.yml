@@ -1,0 +1,20 @@
+- institute: Case Western Reserve University
+  semesters:
+    - semester: Spring 2023
+      courses:
+        - name: Math and Calculus Applications for Life, Managerial, and Social Sciences I
+          code: Math 125
+    - semester: Fall 2022
+      courses:
+        - name: Tropical Geometry Seminar
+          details: Hosted and lectured for a weekly graduate seminar on Tropical Geometry
+        - name: Elementary Differential Equations
+          code: Math 224
+    - semester: Fall 2021
+      courses:
+        - name: Math and Calculus Applications for Life, Managerial, and Social Sciences II
+          code: Math 126
+    - semester: Summer 2021
+      courses:
+        - name: Elementary Functions and Analytic Geometry
+          code: Math 120

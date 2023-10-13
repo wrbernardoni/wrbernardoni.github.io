@@ -1,0 +1,28 @@
+title: William Bernardoni's Personal Page
+email: wrb37@case.edu
+description: >-
+  The personal page of William Bernardoni.
+  Here you can find my papers, research, and mathematical thoughts!
+twitter_username: billy.bernardon1
+github_username: wrbernardoni
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
