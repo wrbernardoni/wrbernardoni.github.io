@@ -10,7 +10,7 @@ title: Home
 PhD Candidate at Case Western Reserve University
 </p>
 <p>
-	Contact me by email - wrb37(at)case.edu - <a href="https://twitter.com/billybernardon1">twitter</a>, <a href="https://github.com/wrbernardoni/">github push</a> or smoke signal!
+	Contact me by email - wrb37(at)case.edu - <a href="https://twitter.com/billybernardon1">twitter</a>, <a href="https://github.com/wrbernardoni/">github push</a> or <a href="https://www.amazon.com/fire-wood/s?k=firewood">smoke signal</a>!
 </p>
 
 <p>
@@ -51,6 +51,9 @@ Brief explanations of each paper are available under the <a href="/papers.html">
     		{% if t.details %}
     		<br>
     		<small>{{t.details}}</small>
+    		{% if t.link %}
+    		<br><small><a href={{t.link}}>{{t.linktext}}</a></small>
+    		{% endif %}
     		{% endif %}
     	</dd>
     	{% endfor %}

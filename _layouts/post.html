@@ -1,7 +1,13 @@
 ---
 layout: default
 ---
+
+<div class="blogbox">
 <h1>{{ page.title }}</h1>
-<p>{{ page.date | date_to_string }} - {{ page.author }}</p>
+{{ page.date | date_to_string }}
+<br>Topic: <strong>{{ page.topic }}</strong>
+{% if page.author %}<br>Blog post by <em>{{page.author}}</em>{% endif %}
+<hr>
 
 {{ content }}
+</div>
