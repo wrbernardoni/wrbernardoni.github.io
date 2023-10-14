@@ -5,7 +5,7 @@
       where: University of Göttingen
       details: Talk given on original work in generalizing valuation theory to a non-commutative setting.
       link: https://www.uni-goettingen.de/de/document/download/646ba36a93fd054a43006cd291fd3a6d.pdf/William%20Bernardoni.pdf
-      linktext: Slides available here
+      linktext: Slides available here.
 - date: August 2023
   tks:
     - name: “Network Storage Analysis via Semiring Geometry”
@@ -51,4 +51,5 @@
     - conference: NEURIPS 
       where: Reconnaisance Blind Chess Workshop
       details: Invited by JHUAPL to present in competition workshop on methods used in algorithm development for reconnaissance blind chess competition
-
+      link: https://rbc.jhuapl.edu/users/22
+      linktext: Replays of my bot's matches can be found here.
