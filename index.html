@@ -7,7 +7,7 @@ title: Home
 <div class="box">
 <img src="assets/images/Headshot.png" alt="A photo of William Bernardoni at NASA Glenn Research Center" id="headshot">
 <p>
-PhD Candidate at Case Western Reserve University
+PhD Candidate at <a href="https://mathstats.case.edu/student/william-bernardoni/">Case Western Reserve University</a>. Projected graduation is spring of 2025.
 </p>
 <p>
 	Contact me by email - wrb37(at)case.edu - <a href="https://twitter.com/billybernardon1">twitter</a>, <a href="https://github.com/wrbernardoni/">github push</a> or <a href="https://www.amazon.com/fire-wood/s?k=firewood">smoke signal</a>!
@@ -78,7 +78,7 @@ Brief explanations of each paper are available under the <a href="/papers.html">
     			<dt>{{t.semester}}</dt>
     			{% for c in t.courses %}
     			<dd>
-    				{% if c.code %} <strong>{{c.code}}:</strong> {% endif %} <em>{{c.name}}</em>
+    				{% if c.code %} {{c.code}}: {% endif %} {{c.name}}
     				{% if c.details %}
     					<br><small>{{c.details}}</small>
     				{% endif %}
