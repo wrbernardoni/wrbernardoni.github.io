@@ -29,25 +29,8 @@ header span.ribbon-inner {
 }
 
 
-header h1 {
-  background-color: #7c334f;
-  font-size: 2.5em;
-  font-weight: 800;
-  font-style: normal;
-  text-transform: uppercase;
-  color: #ece4d8;
-  text-align: center;
-  line-height:1;
-  padding: 14px 20px 0;
-}
-
-header h2 {
-  background-color: #7c334f;
-  font: bold italic .85em/1.5 Georgia, Times, “Times New Roman”, serif;
-  color: #e69b95;
-  padding-bottom: 14px;
-  margin-top: -3px;
-  text-align: center;
+.blogbox h1, .blogbox h2 {
+  margin: 0;
 }
 
 /* footer */
@@ -246,6 +229,13 @@ dd p:first-child {
 #headshot {
 	width: 30%;
 	border: 3px solid black;
+}
+
+@media screen and (max-width: 800px) {
+	#headshot {
+		width: 90vw;
+		margin-left: 1vw;
+	}
 }
 
 .blogbox {
