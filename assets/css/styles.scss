@@ -19,16 +19,6 @@ header {
   top: 38px;
 }
 
-header span.ribbon-inner {
-  position: relative;
-  display: block;
-  background-color: #cd596b;
-  border: 4px solid #7c334f;
-  padding: 2px;
-  z-index: 1;
-}
-
-
 .blogbox h1, .blogbox h2 {
   margin: 0;
 }
@@ -54,6 +44,7 @@ body {
   font: normal normal 15px/1.5 Georgia, Palatino,” Palatino Linotype”, Times, “Times New Roman”, serif;
   color: #544943;
   -webkit-font-smoothing: antialiased;
+  margin: 0.5em 1em;
 }
 
 a, a:hover {
@@ -73,8 +64,16 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: bold;
 }
 
+h1{
+  margin: 0.5em 0em;
+}
+
+h2{
+  margin: 0.45em 0em;
+}
+
 p {
-  margin: .7em 0;
+  margin: .7em 0em;
 }
 
 strong {
@@ -156,7 +155,7 @@ tr:last-child td {
 }
 
 dl {
-  margin: .7em 0 20px;
+  margin: .7em 0 10px;
 }
 
 dt {
@@ -260,5 +259,10 @@ dd p:first-child {
     display: inline;
     margin-right: 20px;
     text-decoration: underline;
+    font-family: Georgia, Palatino,” Palatino Linotype”, Times, “Times New Roman”, serif;
     font-weight: bold;
+}
+
+.mainNav a:hover {
+  color: red;
 }
