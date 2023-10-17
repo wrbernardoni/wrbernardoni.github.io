@@ -255,3 +255,10 @@ dd p:first-child {
     /* Padding for demo purposes */
     padding: 15px;
 }
+
+.mainNav li {
+    display: inline;
+    margin-right: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+}
