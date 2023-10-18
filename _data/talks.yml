@@ -38,6 +38,8 @@
       conference: NASA
       where: Glenn Research Center
       details: Survey lecture on various new developments in the field of tropical geometry which could be applicable to the problem of mathematically modelling satellite networks.
+      link: /Trop_Geo_and_Matroids_Presentation.pdf
+      linktext: Slides available here.
 - date: January 2022
   tks:
     - where: Cleveland State University
