@@ -1,0 +1,31 @@
+<div class="definition">
+<a id="SemiringDefinition"></a>
+<strong>Definition:</strong> A <strong>semiring</strong> \((R,+,*,0_R,1_R)\) is a set \(R\) equipped with two binary operations \(+\) and \(*\), and two noted elements \(0_R\), \(1_R\) such that:
+
+<ol>
+	<li> \((R,+)\) is a commutatiive monoid with identity element \(0_R\).
+		<ul>
+			<li>\(+\) is associative: \((a + b) + c = a + (b + c)\)</li>
+			<li>\(0_R\) is an additive identity: \(0_R + a = a = a + 0_R\)</li>
+			<li>\(+\) is commutative: \(a + b = b + a\)</li>
+		</ul>
+	</li>
+	<li> \((R,*)\) is a monoid with identity element \(1_R\)
+		<ul>
+			<li>\(*\) is associative: \((a * b) * c = a * (b * c)\)</li>
+			<li>\(1_R\) is a multiplicative identity: \(1_R * a = a = a * 1_R\)</li>
+		</ul>
+	</li>
+	<li> Multiplication distributes over addition
+		<ul>
+			<li>\(a * (b + c) = a * b + a * b\)</li>
+			<li>\((a + b) * c = a * c + b * c\)</li>
+		</ul>
+	</li>
+	<li> Multiplication by \(0_R\) annihilates \(R\).
+		<ul>
+			<li>\(0_R * a = 0_R = a * 0_R\)</li>
+		</ul>
+	</li>
+</ol>
+</div>

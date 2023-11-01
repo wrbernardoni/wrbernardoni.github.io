@@ -4,6 +4,9 @@ layout: default
 
 <div class="blogbox">
 <h1>{{ page.title }}</h1>
+{% if page.subtitle %}
+  <h2><em>{{page.subtitle}}</em></h2>
+{% endif %}
 {{ page.date | date_to_string }}
 <br>Topic: <strong>{{ page.topic }}</strong>
 {% if page.author %}<br>Blog post by <em>{{page.author}}</em>{% endif %}

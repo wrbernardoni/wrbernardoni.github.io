@@ -6,7 +6,10 @@ title: Blog
 
 {% for post in site.posts %}
     <div class="blogbox">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+      <h2><a href="{{ post.url }}">{{ post.title }}</a>{% if post.subtitle %}
+      <br><small><em>{{post.subtitle}}</em></small>
+      {% endif %}</h2>
+      
       {{ post.date | date_to_string }}
       <br>Topic: <strong>{{ post.topic }}</strong>
       {% if post.author %}<br>Blog post by <em>{{post.author}}</em>{% endif %}
