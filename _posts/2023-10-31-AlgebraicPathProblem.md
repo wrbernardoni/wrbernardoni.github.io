@@ -40,17 +40,24 @@ One problem is the combinatorial problem of searching through potential paths in
 
 We can represent a Markov chain as a matrix $$A$$, with the entry $$A_{ij}$$ being the probability that we transition from state $$i$$ to state $$j$$, i.e.: $$A_{ij} = P(j \mid i, \text{1 step})$$. For the Markov chain in [Figure 2](#Fig2) that results in the matrix:
 
+<div class="equationBox">
+<div class="equation">
 $$ A = \begin{bmatrix}
         0.6 & 0.4 & 0 & 0\\
         0 & 0.5 & 0.5 & 0\\
         0 & 0.5 & 0.3 & 0.2\\
         0.1 & 0 & 0.2 & 0.7
     \end{bmatrix} $$
+</div>
+</div>
+
 
 The values on the diagonal come from the missing probability mass in the diagram. Node 1 has a 40% chance to move to node 2, and no other transition probabilities, so it must have a 60% chance of remaining stationary.
 
 If we square this matrix, we get our "2 step probabilities":
 
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{align}
     A^2_{ij} &= \sum_{k} A_{ik} * A_{kj}\\
@@ -58,11 +65,16 @@ $$
     &= P(j|i, \text{2 steps}) \label{eq: Markov 2 Step}
 \end{align}
 $$
+</div>
+</div>
+
 
 So $$A^2_{ij}$$ is the probability of moving from node $$i$$ to node $$j$$ in *exactly* two steps.
 
 For our example Markov chain we get:
 
+<div class="equationBox">
+<div class="equation">
 $$
 A^2 = \begin{bmatrix}
     0.36 & 0.44 & 0.2 & 0\\
@@ -71,39 +83,68 @@ A^2 = \begin{bmatrix}
     0.13 & 0.14 & 0.2 & 0.53
 \end{bmatrix}
 $$
+</div>
+</div>
 
 We can induct on this, and we get that in general:
 
+<div class="equationBox">
+<div class="equation">
 $$
 A^n_{ij} = P(j|i, \text{n steps})
 $$
+</div>
+</div>
+
 
 If we want to find the probability that in our stochastic process we move from node $$i$$ to node $$j$$, we need to compute the following sum:
 
+<div class="equationBox">
+<div class="equation">
 $$
 P(j | i) = \sum_{n = 0}^\infty P(j | i, \text{n steps}) * P(\text{n steps})
 $$
+</div>
+</div>
+
 
 Our given process follows a binomial distribution for the number of steps, so we have:
 
+<div class="equationBox">
+<div class="equation">
 $$
 P(\text{n steps}) = \alpha^n * (1 - \alpha)
 $$
+</div>
+</div>
+
 
 Putting these pieces together we get:
 
+<div class="equationBox">
+<div class="equation">
 $$
 P(j|i) = \sum_{n = 0}^\infty A^n_{ij} * \alpha^n * (1 - \alpha)
 $$
+</div>
+</div>
+
 
 We can rewrite this to say that the probability that we will move from node $$i$$ to node $$j$$ will be the $$ij$$ component of the following matrix:
 
+<div class="equationBox">
+<div class="equation">
 $$
 (1 - \alpha)\sum_{n = 0}^\infty\left(\alpha A\right)^n
 $$
+</div>
+</div>
+
 
 For $$\alpha = 0.5$$ we get the following matrix for the Markov chain in [Figure 2](#Fig2):
 
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{bmatrix}
          0.714983 & 0.211811 & 0.0634456 & 0.00976086 \\
@@ -112,25 +153,38 @@ $$
  0.0561249 & 0.0507565 & 0.107369 & 0.785749
 \end{bmatrix}
 $$
+</div>
+</div>
+
 
 This was an *explicit* process to solve the problem, but we could have taken another approach. We could have taken an *implicit* approach and noted that a matrix of probabilities $$X$$ is a solution to our problem if and only if it satisfies the implicit equation:
 
+<div class="equationBox">
+<div class="equation">
 $$
 X = \alpha A X + (1 - \alpha)I
 $$
+</div>
+</div>
+
 
 The above equation is the defining relation of a binomial distribution applied to our Markov chain.
 
 We can "solve" this equation, and we get that if $$(I - \alpha A)$$ is an invertible matrix then the solution to oour equation is of the form
 
+<div class="equationBox">
+<div class="equation">
 $$
 X = (1 - \alpha)(I - \alpha A)^{-1}
 $$
+</div>
+</div>
+
 
 For the Markov chain in [Figure 2](#Fig2) and an arbitrary $$\alpha$$, one can verify as a lengthy linear algebra practice, that we get the following matrix:
 
-<div class="floatDiv">
-<figure class="nbPaper">
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{bmatrix}
          \frac{(1-\alpha ) \left(0.09 \alpha ^3+0.42 \alpha ^2-1.5 \alpha +1\right)}{-0.058 \alpha ^4-0.162 \alpha ^3+1.32 \alpha ^2-2.1 \alpha +1} & \frac{(1-\alpha ) \left(0.068 \alpha ^3-0.4 \alpha ^2+0.4 \alpha \right)}{-0.058 \alpha ^4-0.162 \alpha ^3+1.32 \alpha ^2-2.1 \alpha +1} & \frac{(1-\alpha ) \left(0.2 \alpha ^2-0.14 \alpha ^3\right)}{-0.058 \alpha ^4-0.162 \alpha ^3+1.32 \alpha ^2-2.1 \alpha +1} & \frac{0.04 (1-\alpha ) \alpha ^3}{-0.058 \alpha ^4-0.162 \alpha ^3+1.32 \alpha ^2-2.1 \alpha +1} \\
@@ -139,25 +193,37 @@ $$
  \frac{(1-\alpha ) \left(-0.01 \alpha ^3-0.08 \alpha ^2+0.1 \alpha \right)}{-0.058 \alpha ^4-0.162 \alpha ^3+1.32 \alpha ^2-2.1 \alpha +1} & \frac{(1-\alpha ) \left(0.14 \alpha ^2-0.072 \alpha ^3\right)}{-0.058 \alpha ^4-0.162 \alpha ^3+1.32 \alpha ^2-2.1 \alpha +1} & \frac{(1-\alpha ) \left(0.08 \alpha ^3-0.22 \alpha ^2+0.2 \alpha \right)}{-0.058 \alpha ^4-0.162 \alpha ^3+1.32 \alpha ^2-2.1 \alpha +1} & \frac{(1-\alpha ) \left(0.06 \alpha ^3+0.38 \alpha ^2-1.4 \alpha +1\right)}{-0.058 \alpha ^4-0.162 \alpha ^3+1.32 \alpha ^2-2.1 \alpha +1}
     \end{bmatrix}
 $$
-</figure>
+</div>
 </div>
 
 The key observation is that in order to solve this problem we can either compute the infinite sum:
 
+<div class="equationBox">
+<div class="equation">
 $$
 (1 - \alpha)\sum_{n = 0}^\infty\left(\alpha A\right)^n
 $$
+</div>
+</div>
+
 
 Or we can solve the linear relation:
 
+<div class="equationBox">
+<div class="equation">
 $$
 X = (1 - \alpha)(I - \alpha A)^{-1}
 $$
+</div>
+</div>
+
 
 ## All Pairs Shortest Path Problem
 
 We can create a similar adjacency matrix for the shortest path problem in [Figure 1](#Fig1):
 
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{bmatrix}
     & 2 &  & \\
@@ -166,9 +232,14 @@ $$
     1 &  & 1 & 
 \end{bmatrix}
 $$
+</div>
+</div>
+
 
 We have a lot of missing edges we need to fill in in order to make a matrix. If we fill the missing edges with infinite weight edges then we won't change the length of our shortest paths -- the only paths that have infinite weight will be the ones that leave our original graph. Doing so we get the matrix:
 
+<div class="equationBox">
+<div class="equation">
 $$
 A = \begin{bmatrix}
         \infty & 2 & \infty & \infty\\
@@ -177,49 +248,78 @@ A = \begin{bmatrix}
         1 & \infty & 1 & \infty
     \end{bmatrix}
 $$
+</div>
+</div>
+
 
 For any graph $$G = (V,E)$$, if we have a weight function $$w : E \to \mathbb {R}$$, we can form the weighted adjacency matric $$A$$ where:
 
+<div class="equationBox">
+<div class="equation">
 $$
 A_{ij} = \begin{cases}
         w(i,j) & (i,j) \in E\\
         \infty & (i,j) \not\in E
     \end{cases}
 $$
+</div>
+</div>
+
 
 Using the convention that $$\min(\emptyset) = \infty$$, we can also see $$A$$ as the matrix where $$A^1_{ij}$$ is the minimum weights of the paths of length exactly $$1$$.
 
 The minimum weights of the paths of exactly length $$2$$ between nodes $$i$$ and $$j$$ can be found as:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \min_{k} A_{ik} + A_{kj}
 $$
+</div>
+</div>
+
 
 If we write $$a \oplus b = \min(a,b)$$ and $$a \otimes b = a + b$$ we can rewrite this equation as:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \bigoplus_{k} A_{ik} \otimes A_{kj}
 $$
+</div>
+</div>
 
 This looks a lot like matrix multiplication! We will use this new "addition" $$\oplus$$ and "multiplication" $$\otimes$$ to define a new "matrix algebra".
 
 We will define the matrix with the $$ij$$th entry being the lengths of the shortest paths in exactly 2 steps $$A^{\otimes 2}$$ and in general call $$A^{\otimes n}$$ the matrix:
 
+<div class="equationBox">
+<div class="equation">
 $$
 A^{\otimes n}_{ij} = \bigoplus_{k_1,k_2,...,k_{n-1}}A_{ik_1}\otimes A_{k_1k_2} \otimes...\otimes A_{k_{n-2}k_{n-1}}\otimes A_{k_{n-1}j}
 $$
+</div>
+</div>
+
 
 We define $$A^{\otimes 1} = A$$ and $$A^{\otimes 0}$$ to be the matrix:
 
+<div class="equationBox">
+<div class="equation">
 $$
 A^{\otimes 0}_{ij} = \begin{cases}
         0 & i = j\\
         \infty & i \ne j
     \end{cases}
 $$
+</div>
+</div>
+
 
 That is
 
+<div class="equationBox">
+<div class="equation">
 $$
 A^{\otimes 0} = \begin{bmatrix}
         0 & \infty & ... & \infty\\
@@ -228,37 +328,63 @@ A^{\otimes 0} = \begin{bmatrix}
         \infty & & & 0
     \end{bmatrix}
 $$
+</div>
+</div>
+
 
 We will call $$A^{\otimes 0} = I_{\otimes}$$ in analogy with standard matrix multiplication.
 
 We define $$\otimes$$ matrix multiplication as:
 
+<div class="equationBox">
+<div class="equation">
 $$
 (A \otimes B)_{ij} = \bigoplus_k A_{ik} \otimes B_{kj}
 $$
+</div>
+</div>
+
 
 Using this, one can see $$A^{\otimes n} \otimes A^{\otimes m} = A^{\otimes (n + m)}$$.
 
 We can also define the $$\oplus$$ matrix addition as:
 
+<div class="equationBox">
+<div class="equation">
 $$
 (A \oplus B)_{ij} = A_{ij} \oplus B_{ij}
 $$
+</div>
+</div>
+
 
 We can see that $$A^{\otimes n}_{ij}$$ is the length of the shortest path in *exactly* $$n$$ steps between nodes $$i$$ and $$j$$. If we want the minimum weight path over any number of steps we want:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \min_{n} A^{\otimes n}_{ij} = \bigoplus_{n = 0}^\infty A^{\otimes n}_{ij}
 $$
+</div>
+</div>
 
-Here we also get an implicit version of this equation, where a matrix $$X$$ solves the shortest path problem if and only if it satisfies the equation:
 
+Here we also get an implicit version of this equation, where a matr
+ix $$X$$ solves the shortest path problem if and only if it satisfies the equation:
+
+<div class="equationBox">
+<div class="equation">
 $$
 X = (A \otimes X) \oplus I_{\otimes}
 $$
+</div>
+</div>
+
 
 For our example in [Figure 1](#Fig1) we get:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{align*}
     I_\otimes = A^{\otimes 0} &= \begin{bmatrix}
@@ -288,26 +414,37 @@ $$
     \end{bmatrix}
 \end{align*}
 $$
+</div>
+</div>
 
 # $$ X = AX + B $$ and the Kleene Star
 
 Side by side the solutions for our two problems were:
 
+<div class="equationBox">
+<div class="equation">
 $$
 (1 - \alpha)\sum_{n = 0}^\infty \left(\alpha A\right)^n \qquad \bigoplus_{n = 0}^\infty A^{\otimes n}
 $$
+</div></div>
 
 They both look like [geometric series](https://en.wikipedia.org/wiki/Geometric_series), and the implicit relation that they solved were of the form:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \alpha A * X + (1 - \alpha)I \qquad (A \otimes X) \oplus I_{\otimes}
 $$
+</div></div>
 
 If we let our idea of what $$*$$ and $$+$$ represent change, both problems could be reduced to solving a linear equation of the form
 
+<div class="equationBox">
+<div class="equation">
 $$
 X = A*X + B
 $$
+</div></div>
 
 This is the **Algebraic Path Problem**. The algebraic path problem gives a common formulation to *many* types of problems, including finding:
 
@@ -332,6 +469,8 @@ To solve each of these problems we just need to find the right notion of multipl
 
 If we were to naively try to solve this equation we could do the following:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{align*}
     X &= AX + B\\
@@ -340,20 +479,27 @@ $$
     X &= \frac{B}{1 - A}
 \end{align*}
 $$
+</div></div>
 
 But we run into a number of problems. We might not be able to compute $$\dfrac{B}{1 - A}$$. In our Markov chain example both $$A$$ and $$B$$ were matrices, and not all matrices are invertible, so we may not be able to dvide by $$1 - A$$. Even if we can divide by $$1- A$$ we would need to decide if we are *left* or *right* dividing by $$1 - A$$, because matrix multiplication is not commutative. Even worse, we might not even be able to *subtract*. In our shortest path example $$a \oplus b$$ was the minimum of $$a$$ and $$b$$ -- there is no inverse operation to finding the minimum of two numbers.
 
 We need to find a method of solving $$X = AX + B$$ using *only addition and multiplication*. Our above solution is not worthless though. If we stare at it long enough we can note that it is the solution to the geometric series:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \sum_{n = 0}^\infty A^n B
 $$
+</div></div>
 
 We can see that an expression of the above form satisfies the equation
 
+<div class="equationBox">
+<div class="equation">
 $$
 X = AX + B
 $$
+</div></div>
 
 To make writing our solutions easier we define the **Kleene Star**.
 
@@ -367,15 +513,21 @@ $$
 
 When the Kleene star exists (which it does not always exist), assuming suitable axioms on our number system, we get that $$A^* B$$ is a solution to the equation:
 
+<div class="equationBox">
+<div class="equation">
 $$
 X = AX + B
 $$
+</div></div>
 
 And $$B A^*$$ is a solution to the equation:
 
+<div class="equationBox">
+<div class="equation">
 $$
 X = XA + B
 $$
+</div></div>
 
 If our number system has a non-commutative multiplication then these could represent distinct problems.
 
@@ -391,7 +543,10 @@ What do we need in a "number system" to make our equation $$X = AX + B$$ make se
 	We need $$A\left(\sum A^i\right) = \sum A^{i + 1}$$ to make $$A^*$$ a solution. Strictly speaking to solve $$X = AX + B$$ we only need *left* distributivity and to solve $$X = XA + B$$ we only need *right* distributivity.
 	3. We want our addition and our multiplication to be associative. We didn't use any brackets when defining the Kleene star, and non-associative operations are quite a hassle.
 	4. We want our addition to be commutative. If it is not then the following four equations all could represent distinct problems with four distinct solutions instead of the two that we currently have:
-	\\\[X = AX + 1 \qquad X = 1 + AX \qquad X = XA + 1 \qquad X = 1 + XA\\\]
+    <div class="equationBox">
+    <div class="equation">
+	\[X = AX + 1 \qquad X = 1 + AX \qquad X = XA + 1 \qquad X = 1 + XA\]
+    </div></div>
 
 Taken together these are almost the axioms of a [**semiring**](#SemiringDefinition) -- the only missing axioms are the existence of an additive identity $$0$$, and the annihilation axiom: $$0a = 0 = a0$$.
 
@@ -443,9 +598,12 @@ There are multiple isomorphic formulations of the tropical semiring, the one abo
 
 Semirings may also look *nothing* like numbers. Let's denote the power set of a set $$X$$ as $$P(X)$$, and $$P_{fin}(X)$$ to be the set of finite subsets of $$X$$.
 
+<div class="equationBox">
+<div class="equation">
 $$
 P_{fin}(X) = \{Y \subseteq X, |Y| \in \mathbb N\}
 $$
+</div></div>
 
 <div class="definition">
 <strong>Example 3.</strong> Let \(X\) be a set. We can form a semiring on \(P(X)\), where:
@@ -526,9 +684,12 @@ Idempotent semirings have a natural partial order given by their addition.
 
 This forms a partial order for any idempotent semiring. In fact it forms a lower semi-lattice. Under this ordering, if $$X$$ is a finite subset of our semiring we get:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \inf(X) = \sum_{x \in X} x
 $$
+</div></div>
 
 This can be remembered by the phrase: "The crocodile eats the bigger element." If you picture $$\le$$ as a little crocodile, then $$a \le b$$ if when we add $$a$$ and $$b$$, $$b$$ is "eaten": $$a + b = a$$.
 
@@ -607,6 +768,8 @@ The structure of $$M_X(S)$$ is highly dependent on the structure of $$S$$.
 
 Elements of $$M_X(S)$$ can be referred to using matrix notation if we fix an indexing on $$X$$. For $$A \in M_X(S)$$ we write $$A_{ij}$$ to refer to $$A(i,j)$$ and we can write out elements in matrix notation:
 
+<div class="equationBox">
+<div class="equation">
 $$
 A = \begin{bmatrix}
         A_{00} & A_{01} & A_{02} & ...\\
@@ -615,9 +778,12 @@ A = \begin{bmatrix}
         \vdots & \vdots & \vdots &\ddots
     \end{bmatrix}
 $$
+</div></div>
 
 In this form we get
 
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{align*}
 0_{M_X(S)} &= \begin{bmatrix}
@@ -634,6 +800,7 @@ $$
     \end{bmatrix} 
 \end{align*}
 $$
+</div></div>
 
 Matrix multiplication is the usual dot product of row and column that you may have seen in a linear algebra class.
 
@@ -667,9 +834,12 @@ $$
 
 If $$S$$ is an idempotent semiring, this proposition tells us
 
+<div class="equationBox">
+<div class="equation">
 $$
 A^*_{ij} = \inf(\omega(P_{ij}))
 $$
+</div></div>
 
 Where the infinum is with respect to the canonical ordering on $$S$$.
 
@@ -690,9 +860,12 @@ $$
 
 There is a handy trick to computing cumulants. In an idempotent semiring we have the identity
 
+<div class="equationBox">
+<div class="equation">
 $$
 (1 + s)^n = 1 + s + s^2 + ... + s^n = s^{(n)}
 $$
+</div></div>
 
 So as a hand-wavey statement we can say that computing $$s^*$$ is the "same" as computing $$\lim_{n \to \infty}(1 + s)^n$$. In many cases this limit converges in finite time, we call that the Kleene star "stabilizing".
 

@@ -230,13 +230,6 @@ dd p:first-child {
 	border: 3px solid black;
 }
 
-@media screen and (max-width: 800px) {
-	#headshot {
-		width: 90vw;
-		margin-left: 1vw;
-	}
-}
-
 
 figure {
   margin: 1vw;
@@ -245,6 +238,7 @@ figure {
   block-size: fit-content;
   background: white;
   display:inline-block;
+  overflow: hidden;
 }
 
 .definition {
@@ -252,7 +246,8 @@ figure {
   border: 1.5px solid black;
   width: 100%;
   background: white;
-  display:inline-block;
+  display: inline-block;
+  overflow: scroll;
 }
 
 figcaption {
@@ -276,6 +271,28 @@ figcaption {
   width: fit-content;
   block-size: fit-content;
   display:inline-block;
+}
+
+
+.equation
+{
+  background-color: rgb(242, 242, 237);
+  text-align: center;
+  border: 1px solid black;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+  block-size: fit-content;
+  display:inline-block;
+}
+
+.equationBox
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .blogbox {
@@ -306,4 +323,32 @@ figcaption {
 
 .mainNav a:hover {
   color: red;
+}
+
+.inline-image {
+  width:400px;
+}
+
+@media screen and (max-width: 800px) {
+  #headshot {
+    width: 90vw;
+    margin-left: 1vw;
+  }
+
+  .MathJax_Display, .MathJax {
+    width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 500px) {
+
+.inline-image {
+  width:90%;
+}
+
+.floatDiv {
+    width: 100%;
+}
+
 }

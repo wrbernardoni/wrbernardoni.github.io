@@ -56,9 +56,14 @@ Delays can be modeled by having arrival times after sending time. Disruption is 
 
 For instance if we examine the element:
 
+<div class = "equationBox">
+<div class = "equation">
 $$
 X = \{(a,b) : a < 10, a + 1 \le b \le a + 10\}
 $$
+</div>
+</div>
+
 
 We have that we can send a message along link $$X$$ at any time until time $$10$$, and that message will arrive with a delay of $$1$$ and can be stored for $$9$$ units of time.
 
@@ -74,29 +79,47 @@ We have that we can send a message along link $$X$$ at any time until time $$10$
 
 If we have two elements $$X, Y \in \mathcal C$$, $$X + Y$$ represents being able to use the link given by $$X$$ *or* the link given by $$Y$$. So we get:
 
+<div class = "equationBox">
+<div class = "equation">
 $$
 X +_{\mathcal C} Y = X \cup Y
 $$
+</div>
+</div>
 
 Alternatively:
 
+<div class = "equationBox">
+<div class = "equation">
 $$
 \left(X +_{\mathcal C} Y\right)_{ij} = X_{ij} \oplus Y_{ij}
 $$
+</div>
+</div>
+
 
 Where $$a \oplus b$$ is the logical **OR**.
 
 $$X *_{\mathcal C} Y$$ represents taking a path allowed by $$X$$ *then* a path allowed by $$Y$$. So for a pair $$(i,j)$$ to be in $$X *_{\mathcal C} Y$$ we need a $$k$$ such that $$(i,k) \in X$$ and $$(k,j) \in Y$$. So we get:
 
+<div class = "equationBox">
+<div class = "equation">
 $$
 X *_{\mathcal C} Y = \{(i,j) : \exists k : (i,k) \in X, (k,j) \in Y\}
 $$
+</div>
+</div>
 
 If we write $$\otimes$$ for the logical **AND** we can write this condition as:
 
+<div class = "equationBox">
+<div class = "equation">
 $$
 \left(X *_{\mathcal C} Y\right)_{ij} = \bigoplus_{k \in \mathbb R} X_{ik} \otimes Y_{kj}
 $$
+</div>
+</div>
+
 
 This looks a whole lot like matrix multiplication, because it is! Every element of the universal contact semiring can be written as a $$\mathbb R \times \mathbb R$$ boolean matrix.
 
@@ -111,9 +134,13 @@ We restrict $$\mathcal C$$ to upper triangular matrices to avoid time travelling
 
 A contact $$([s,e]:\omega)$$ can be modelled as the matrix:
 
+<div class = "equationBox">
+<div class = "equation">
 $$
 X_{ij}^{([s,e]:\omega)} = \begin{cases}1 & i \in [s,e], j = i + \omega\\ 0 & \text{else}\end{cases}
 $$
+</div>
+</div>
 
 <div class="floatDiv">
 <figure>
@@ -124,9 +151,13 @@ $$
 
 Being able to store indefinitely at a node can be modelled by the *storage matrix*:
 
+<div class = "equationBox">
+<div class = "equation">
 $$
 S_{ij} = \begin{cases} 1 & j \ge i\\ 0 & j < i \end{cases}
 $$
+</div>
+</div>
 
 <div class="floatDiv">
 <figure>
@@ -137,12 +168,16 @@ $$
 
 We can model a contact graph on a set of nodes $$X$$ as an element $$A$$ in $$M_X(\mathcal C)$$ where 
 
+<div class = "equationBox">
+<div class = "equation">
 $$
 A_{ij} = \begin{cases} 
 S & i = j\\ 
 \sum_{([s,e]:\omega) \in C_{ij}} X^{([s,e]:\omega)} & i \ne j
 \end{cases}
 $$
+</div>
+</div>
 
 That is, we place the storage matrix on all self loops, and we take the sum of all contact matrices between nodes $$i$$ and $$j$$ as the edge between $$i$$ and $$j$$. Finding the Kleene star of the matrix $$A$$ gives all possible time windows where we can communicate between nodes in our contact graph.
 
@@ -156,9 +191,13 @@ From here on out we will refer to the matrix $$X^{([s,e]:\omega)}$$ using the na
 
 If we have two contacts $$([s_1,e_1]:\omega_1)$$, $$([s_2,e_2]:\omega_2)$$ multiplying them corresponds to composing the two contacts. This forms another contact:
 
+<div class="equationBox">
+<div class="equation">
 $$
 ([s_1,e_1]:\omega_1) * ([s_2, e_2]:\omega_2) = ([s_1, e_1] \cap [s_2 - \omega_1, e_2 - \omega_1]: \omega_1 + \omega_2)
 $$
+</div>
+</div>
 
 Our multiplicative identity is the contact $$((-\infty, \infty):0)$$.
 
@@ -208,11 +247,12 @@ Where $$x$$ denotes the recieve time and $$y$$ denotes the send time.
 
 If we look back and forth between [figure 6](#Fig6) and [figure 7](#Fig7) quickly, we can note that the *storage-contact-storage* matrices can be rewritten in the form of nevadas. We call this the **S-conjugation law** in the nevada semiring.
 
-<div class="definition"><strong>Definition.</strong> The <strong>S-conjugation law</strong> for nevadas is the equation:
+<div class="definition"><strong>Definition.</strong> The <strong>S-conjugation law</strong> for nevadas is the equation:<br>
 
 $$
 S ([s,e]:\omega) S = ((-\infty,e]:0)S([s,\infty):\omega) = ((-\infty,e]:\omega)S([s-\omega,\infty):0)
 $$
+
 </div>
 
 From the perspective of nevadas given by the five hyperplanes we get the **canonical form** of a nevada.
@@ -227,9 +267,14 @@ With \(s_2 \in [s_1,e_1]\) and \(e_1 \le e_2\)
 
 Given a nevada $$([s_1,e_1]:\omega_1)S([s_2,e_2]:\omega_2)$$ the canonical form is
 
+<div class="equationBox">
+<div class="equation">
 $$
 ([s_1, \min(e_1, e_2 - \omega_1)]:0)S([\max(s_2 - \omega_1, s_1),e_2 - \omega_1]:\omega_1 + \omega_2)
 $$
+</div>
+</div>
+
 
 There may be two nevadas with distinct delays that have the same support when seen as a matrix. In settings where the delay is relevant, and not just the availability windows we may want to work over a purely symbolic form rather than with the matrices. This symbolic form we call the *nevada monoid*.
 
@@ -271,9 +316,33 @@ These axioms are:
 * Declaring the $$S$$-conjugation law as an axiom.
 
 These relations can be summed up in three important formulas:
-* The multiplication of contacts: $$([s_1,e_1] : \omega_1) * ([s_2,e_2] : \omega_2) = ([\max(s_1, s_2 - \omega_1, \min(e_1, e_2 - \omega_1)] : \omega_1 + \omega_2)$$
-* The $$S$$-conjugation law: $$S * ([s,e]:\omega) * S = ((-\infty, e]:0) * S * ([s,\infty) : \omega)$$
-* The canonical form: $$([s_1, e_1]:\omega_1)S([s_2,e_2]:\omega_2)=([s_1, \min(e_1, e_2 - \omega_1)]:0)S([\max(s_2 - \omega_1, s_1),e_2 - \omega_1]:\omega_1 + \omega_2)$$
+<ul>
+<li>The multiplication of contacts: <br>
+<div class="equationBox">
+<div class="equation">
+$$([s_1,e_1] : \omega_1) * ([s_2,e_2] : \omega_2) = ([\max(s_1, s_2 - \omega_1, \min(e_1, e_2 - \omega_1)] : \omega_1 + \omega_2)$$
+</div>
+</div>
+</li>
+
+<li>
+The \(S\)-conjugation law:<br>
+<div class="equationBox">
+<div class="equation">
+$$S * ([s,e]:\omega) * S = ((-\infty, e]:0) * S * ([s,\infty) : \omega)$$
+</div>
+</div>
+</li>
+
+<li>
+The canonical form:
+<div class="equationBox">
+<div class="equation">
+$$([s_1, e_1]:\omega_1)S([s_2,e_2]:\omega_2)=([s_1, \min(e_1, e_2 - \omega_1)]:0)S([\max(s_2 - \omega_1, s_1),e_2 - \omega_1]:\omega_1 + \omega_2)$$
+</div>
+</div>
+</li>
+</ul>
 
 <div class="definition"><strong>Theorem.</strong> Every element of \(\mathcal N\) may be written in either the form of a contact \(([s,e]:\omega)\), or the form of a nevada, \(([s_1,e_1]:\omega_1)S([s_2,e_2]:\omega_2)\).
 </div>
@@ -298,12 +367,16 @@ $$
 
 The realization of nevadas as matrices gives us a map of monoids $$\varphi : \mathcal N \to \mathcal C$$. This is *not* an injective map, as if we examine the nevadas
 
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{align}
 n_1 &= ([0,3]:0)S([10,15]:0)\\
 n_2 &= ([0,3]:0)S([7,12]:3)
 \end{align}
 $$
+</div>
+</div>
 
 These are distinct elements in $$\mathcal N$$, as they have distinct delays, but one can verify that $$\varphi(n_1) = \varphi(n_2)$$.
 
@@ -311,17 +384,26 @@ We can use $$\varphi$$ and the [universal algebra isomorphism theorems](https://
 
 $$\varphi$$ lifts to become a semiring homomorphism $$\phi : P_{fin}(\mathcal N) \to \mathcal C$$, where $$P_{fin}(\mathcal N)$$ is the semiring of finite subsets of $$\mathcal N$$, where addition is union and multiplication is Minkowski multiplication.
 
+<div class="equationBox">
+<div class="equation">
 $$
 \phi(X) = \sum_{n \in X}\varphi(n)
 $$
+</div>
+</div>
+
 
 The image of $$\phi$$ is a subsemiring of the universal contact semiring that we call the **Store and Forward Semiring**, as it is the smallest subsemiring of $$\mathcal C$$ which encapsulates the store and forward behavior. We denote it $$\mathcal C_{SF} = \phi(P_{fin}(\mathcal N))$$.
 
 The isomorphism theorems give us a way to explicitly compute this semiring, as by the isomorphism theorems we know that:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \mathcal{C}_{SF} \cong P_{fin}(\mathcal N) / \sim
 $$
+</div>
+</div>
 
 Where a set of nevadas and contacts $$X_1$$ is related to another $$X_2$$ if and only if they have the same total support as boolean matrices. As each nevada is convex and a well defined shape we can efficiently check if two collections of nevadas have the same coverage.
 
@@ -341,26 +423,36 @@ To do so we create step matrices $$T_n \in M_X(\mathcal C_{SF})$$. $$(T_n)_{ab}$
 
 We first create an "off-diagonal" matrix $$D$$:
 
+<div class="equationBox">
+<div class="equation">
 $$
 D_{ab} = \begin{cases}
 A_{ab} & a \ne b\\
 0_{\mathcal C_{SF}} & a = b
 \end{cases}
 $$
+</div>
+</div>
+
 
 The set of times that we can send a matrix at node $$a$$ and have it arrive at node $$b$$ in $$0$$ steps is empty if $$a \ne b$$ and it is the contact $$((-\infty, \infty):0)$$ if $$a = b$$, and so we define $$T_0 = 1_{M_X(\mathcal C_{SF})}$$ as the identity matrix.
 
 In $$1$$ or fewer steps it is given by the matrix $$T_1 = I + D$$, in $$2$$ or fewer it is $$T_2 = I + D + D^2$$ and in $$n \ge 2$$ or fewer steps by
 
+<div class="equationBox">
+<div class="equation">
 $$
 T_n = T_{n-1} + D A^{n-2} D = I + D + \sum_{i = 0}^{n-2} D A^i D = I + D + D A^{(n-2)}D
 $$
+</div>
+</div>
+
 
 By plotting $$(T_n)_{ab}$$ we can see the windows in which we can immediately send a message from node $$a$$ and have it arrive at node $$b$$ in $$n$$ or fewer steps.
 
 <div class="floatDiv">
 <figure>
-<img src="/assets/images/StepMatrixDemo.gif" alt="The evolving step matrices of a 3 by 3 slice of a 15 by 15 earth moon simulated satellite network" style="width:500px;margin:10px">
+<img src="/assets/images/StepMatrixDemo.gif" alt="The evolving step matrices of a 3 by 3 slice of a 15 by 15 earth moon simulated satellite network" class="inline-image">
 <figcaption>Figure 8: A 3 by 3 slice of evolving \(T_n\) matrices in a simulated 15 by 15 node Earth-Moon satellite network. Each colored box is given by a different path through the contact network. The scale of each block is over a one day period.</figcaption>
 </figure>
 </div>
@@ -396,30 +488,43 @@ Let $$A$$ and $$B$$ be polyhedral basics with polygons $$P_A$$ and $$P_B$$ respe
 
 First we create two 3D polyhedral shapes, $$C_A$$ and $$C_B$$ as follows:
 
+<div class="equationBox">
+<div class="equation">
 $$
 \begin{align}
 C_A &= \{(x,y,t): (x,y) \in P_A, t \in \mathbb R\} = \{(P_A, t) : t \in \mathbb R\}\\
 C_B &= \{(y + t, x, t) : (x,y) \in P_B, t \in \mathbb R\} = \{(P^T_B + (t,0), t) : t \in \mathbb R\}
 \end{align}
 $$
+</div>
+</div>
 
 As these are polyhedra there exist efficient algorithms to calculate $$C_A \cap C_B$$. We note that we can describe the product $$AB$$ as
 
+<div class="equationBox">
+<div class="equation">
 $$
 (AB)_{i, i-k} = \begin{cases}
 1 & \exists y : (i,y,k) \in C_A \cap C_B\\
 0 & \text{otherwise}
 \end{cases}
 $$
+</div>
+</div>
 
 or equivalently:
 
+<div class="equationBox">
+<div class="equation">
 $$
 (AB)_{i, j} = \begin{cases}
 1 & \exists y : (i,y,i-j) \in C_A \cap C_B\\
 0 & \text{otherwise}
 \end{cases}
 $$
+</div>
+</div>
+
 
 In other words, the support of $$AB$$ is a skewed version of the shadow of $$C_A \cap C_B$$ on the $$e_1-e_3$$ plane. So to find $$AB$$ we just need to:
 
