@@ -40,7 +40,7 @@ For example consider the graph in [figure 1](#Fig1). Here we have two possible r
 
 The route $$a \to b \to c$$ can be used along time interval $$[0,2]$$ and has a total delay of $$15$$, giving us potential arrival times of $$[15,17]$$
 
-The route $$a \to d \to c$$ either gives us no arrival window if our nodes to not have storage, or if we are allowed to store at node $$d$$ then we can send a message at any time in the interval $$[0,5]$$ and arrive between times $$[11,12]$$.
+The route $$a \to d \to c$$ either gives us no arrival window if our nodes do not have storage capabilities, or if we are allowed to store at node $$d$$ then we can send a message at any time in the interval $$[0,5]$$ and arrive between times $$[11,12]$$.
 
 There are many ways in which we can analyse and compare these routes. We can talk about earliest arrival time, or the largest throughput of data we can get through a route, or the minimal amount of storage needed to use a route. We would like to be able to represent this routing problem algebraically in a semiring which allows us to analyze any of these potential optimization targets on our routes.
 
