@@ -44,7 +44,7 @@ PhD Candidate at <a href="https://mathstats.case.edu/student/william-bernardoni/
 </p>
 <ul>
 {% for item in site.data.papers %}
-    <li>{{item.date}} - <strong><a href="{{ item.link }}" >{{item.name}}</a></li></strong> by {{item.authors}}
+    <li>{{item.date}} - <strong>{% if item.link %}<a href="{{ item.link }}" >{{item.name}}</a>{% else %}{{item.name}}{% endif %}</li></strong> by {{item.authors}}
     <br>
     <em>{{item.status}}</em>
 {% endfor %}

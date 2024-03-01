@@ -6,7 +6,7 @@ title: Papers
 <h1>Papers</h1>
 {% for item in site.data.papers %}
 <div class="blogbox">
-    {{item.date}} - <strong><a href="{{ item.link }}">{{item.name}}</a></li></strong>
+    {{item.date}} - <strong>{% if item.link %}<a href="{{ item.link }}" >{{item.name}}</a>{% else %}{{item.name}}{% endif %}</li></strong>
     <br>by {{item.authors}}
     <br>
     <em>{{item.status}}</em>
