@@ -1,3 +1,8 @@
+- name: Network Storage Analysis via Semiring Geometry
+  description: We introduce a novel semiring model for contact-based routing protocols that includes a means of determining storage needs. Through proper analysis of the semiring structure, we show how to determine optimal storage structures in satellite networks. In addition, we run our analysis on simulated satellite networks to demonstrate the potential for working with these semiring models in a computational framework. We conclude by indicating future directions for semiring analysis is space communications.
+  authors: William Bernardoni, Rovert Kassouf-Short, Robert Cardona, Brian Heller, Justin Curry, David Spivak, Juan A. Fraire
+  status: Accepted at the IEEE Aerospace Conference, 2024. Article will be avaible around June.
+  date: March 7th, 2023
 - name: Applications of Generalized Universal Valuations
   description: We introduce a generalization of the universal valuation semiring defined by Jeffrey and Noah Giansiracusa. We then explicitly characterize the additive structure of this semiring and show that, when applied to \(\mathbb Q\), this characterization gives the Non-Archimedean case of Ostrowski's theorem. We conclude with examples of non-commutative valuations and their applications, such as the detection of the existence of representations of rings in ultrametric vector spaces.
   authors: William Bernardoni
