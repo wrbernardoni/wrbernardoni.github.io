@@ -1,6 +1,11 @@
+- name: A Universal Property of the Spectrum of a Ring and the Semiring of its Ideals
+  description: Arithmetic valuations are intimately connected with the structure of the ideals of a commutative ring. We show how the generalized idempotent semiring valuations of Jeffrey and Noah Giansiracusa can be used to make this connection explicit. Through this generalized valuation theory sufficiently complete positive valuations give rise to Galois correspondences with the lattice of ideals of a commutative ring. Up to isomorphism the semiring of ideals of a commutative ring can be defined as a universal factoring semiring for positive valuations. We then further show that this valuation theory can formally connect Joyal's \(\textit{notion de z\'eros}\) and universal property of the spectrum of a ring to arithmetic valuation theory. We show that up to isomorphism as a coframe, the closed Zariski topology on a spectrum of a commutative ring can be defined as the universal factoring semiring of additively and multiplicatively idempotent valuations.
+  authors: William Bernardoni
+  status: Preprint
+  date: April 18th, 2024
 - name: Network Storage Analysis via Semiring Geometry
   description: We introduce a novel semiring model for contact-based routing protocols that includes a means of determining storage needs. Through proper analysis of the semiring structure, we show how to determine optimal storage structures in satellite networks. In addition, we run our analysis on simulated satellite networks to demonstrate the potential for working with these semiring models in a computational framework. We conclude by indicating future directions for semiring analysis is space communications.
-  authors: William Bernardoni, Rovert Kassouf-Short, Robert Cardona, Brian Heller, Justin Curry, David Spivak, Juan A. Fraire
+  authors: William Bernardoni, Robert Kassouf-Short, Robert Cardona, Brian Heller, Justin Curry, David Spivak, Juan A. Fraire
   status: Accepted at the IEEE Aerospace Conference, 2024. Article will be avaible around June.
   date: March 7th, 2023
 - name: Applications of Generalized Universal Valuations
