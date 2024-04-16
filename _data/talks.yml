@@ -1,3 +1,9 @@
+- date: April 2024
+  tks:
+    - name: "Space, Spectra, and Semiring Systems of Equations"
+      conference: Algebra and Combinatorics Seminar
+      where: Tulane University
+      details: Talk given on original work on systems of equations over idempotent semirings and their applications in both satellite networks and commutative algebra.
 - date: September 2023
   tks:
     - name: "Applications of Generalized Universal Valuations"
