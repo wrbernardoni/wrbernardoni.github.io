@@ -1,6 +1,7 @@
 - name: A Universal Property of the Spectrum of a Ring and the Semiring of its Ideals
   description: Arithmetic valuations are intimately connected with the structure of the ideals of a commutative ring. We show how the generalized idempotent semiring valuations of Jeffrey and Noah Giansiracusa can be used to make this connection explicit. Through this generalized valuation theory sufficiently complete positive valuations give rise to Galois correspondences with the lattice of ideals of a commutative ring. Up to isomorphism the semiring of ideals of a commutative ring can be defined as a universal factoring semiring for positive valuations. We then further show that this valuation theory can formally connect Joyal's notion de zéros and universal property of the spectrum of a ring to arithmetic valuation theory. We show that up to isomorphism as a coframe, the closed Zariski topology on a spectrum of a commutative ring can be defined as the universal factoring semiring of additively and multiplicatively idempotent valuations.
   authors: William Bernardoni
+  link: https://arxiv.org/abs/2404.10937
   status: Preprint
   date: April 18th, 2024
 - name: Network Storage Analysis via Semiring Geometry
