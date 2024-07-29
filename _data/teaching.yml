@@ -1,5 +1,9 @@
 - institute: Case Western Reserve University
   semesters:
+    - semester: Fall 2024
+      courses:
+        - name: Discrete Mathematics
+          code: Math 304
     - semester: Spring 2023
       courses:
         - name: Math and Calculus Applications for Life, Managerial, and Social Sciences I
