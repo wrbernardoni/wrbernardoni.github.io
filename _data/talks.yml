@@ -1,3 +1,9 @@
+- date: August 2024
+  tks:
+    - name: "What routes to Vegas stays in Vegas: Creating contact tables using the Nevada semiring"
+      conference: NASA
+      where: Glenn Research Center
+      details: Talk given on original work in generating time varying, throughput sensitive routing tables for deep space satellite networks using an original algebraic model.
 - date: April 2024
   tks:
     - name: "Space, Spectra, and Semiring Systems of Equations"
