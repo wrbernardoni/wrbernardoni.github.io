@@ -9,7 +9,7 @@ title: Papers
     {{item.date}} - <strong>{% if item.link %}<a href="{{ item.link }}" >{{item.name}}</a>{% else %}{{item.name}}{% endif %}</li></strong>
     <br>by {{item.authors}}
     <br>
-    <em>{{item.status}}</em>
+    <em>{{item.status}}</em>{% if item.preprint %}<br><a href="{{item.preprint}}"><em>Preprint available here.</em></a>{% endif %}
     <br>
     <small>{{item.description}}</small>
     <br>
