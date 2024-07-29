@@ -13,9 +13,10 @@
 - name: Applications of Generalized Universal Valuations
   description: We introduce a generalization of the universal valuation semiring defined by Jeffrey and Noah Giansiracusa. We then explicitly characterize the additive structure of this semiring and show that, when applied to \(\mathbb Q\), this characterization gives the Non-Archimedean case of Ostrowski's theorem. We conclude with examples of non-commutative valuations and their applications, such as the detection of the existence of representations of rings in ultrametric vector spaces.
   authors: William Bernardoni
-  link: https://arxiv.org/abs/2305.08697
-  status: Preprint, Accepted in Communications in Algebra
-  date: May 15th, 2023
+  link: https://www.tandfonline.com/doi/pdf/10.1080/00927872.2024.2369906
+  preprint: https://arxiv.org/abs/2305.08697
+  status: Published in Communications in Algebra
+  date: Preprint available May 15th, 2023; published June 29th 2024
 - name: Algebraic and Geometric Models for Space Networking
   description: In this paper we introduce some new algebraic and geometric perspectives on networked space communications. Our main contribution is a novel definition of a time-varying graph (TVG), defined in terms of a matrix with values in subsets of the real line \(P(\mathbb R)\). We leverage semi-ring properties of \(P(\mathbb R)\) to model multi-hop communication in a TVG using matrix multiplication and a truncated Kleene star. This leads to novel statistics on the communication capacity of TVGs called lifetime curves, which we generate for large samples of randomly chosen STARLINK satellites, whose connectivity is modeled over day-long simulations. Determining when a large subsample of STARLINK is temporally strongly connected is further analyzed using novel metrics introduced here that are inspired by topological data analysis (TDA). To better model networking scenarios between the Earth and Mars, we introduce various semi-rings capable of modeling propagation delay as well as protocols common to Delay Tolerant Networking (DTN), such as store-and-forward. Finally, we illustrate the applicability of zigzag persistence for featurizing different space networks and demonstrate the efficacy of K-Nearest Neighbors (KNN) classification for distinguishing Earth-Mars and Earth-Moon satellite systems using time-varying topology alone.
   authors: William Bernardoni, Robert Cardona, Jacob Cleveland, Justin Curry, Robert Green, Brian Heller, Alan Hylton, Tung Lam, Robert Kassouf-Short
