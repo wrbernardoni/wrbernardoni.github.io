@@ -1,24 +1,24 @@
 - date: September 2024
   tks:
-    - name: "Applications of the Geometry of Idempotent Semirings towards Deep Space Communications"
+    - name: "“Applications of the Geometry of Idempotent Semirings towards Deep Space Communications”"
       conference: Summer School on Tropical Linear Spaces
       where: University of Tübingen
       details: Talk given on original work using idempotent semirings and the algebraic path problem to transform infinite combinatorial problems that appear in satellite networking into computable convex optimization problems.
 - date: August 2024
   tks:
-    - name: "What routes to Vegas stays in Vegas: Creating contact tables using the Nevada semiring"
+    - name: "“What routes to Vegas stays in Vegas: Creating contact tables using the Nevada semiring”"
       conference: NASA
       where: Glenn Research Center
       details: Talk given on original work in generating time varying, throughput sensitive routing tables for deep space satellite networks using an original algebraic model.
 - date: April 2024
   tks:
-    - name: "Space, Spectra, and Semiring Systems of Equations"
+    - name: "“Space, Spectra, and Semiring Systems of Equations”"
       conference: Algebra and Combinatorics Seminar
       where: Tulane University
       details: Talk given on original work on systems of equations over idempotent semirings and their applications in both satellite networks and commutative algebra.
 - date: September 2023
   tks:
-    - name: "Applications of Generalized Universal Valuations"
+    - name: "“Applications of Generalized Universal Valuations”"
       conference: Developments in Modern Mathematics
       where: University of Göttingen
       details: Talk given on original work in generalizing valuation theory to a non-commutative setting.
@@ -26,13 +26,13 @@
       linktext: Slides available here.
 - date: August 2023
   tks:
-    - name: “Network Storage Analysis via Semiring Geometry”
+    - name: "“Network Storage Analysis via Semiring Geometry”"
       conference: NASA
       where: Glenn Research Center
       details: Talk given on original work on deriving the minimal amount of storage needed in a satellite network to attain the maximum throughput using algebraic and geometric methods.
 - date: July 2023
   tks:
-    - name: “Algebraic Path Problem, Semirings, and Contact Graph Routing”
+    - name: "“Algebraic Path Problem, Semirings, and Contact Graph Routing”"
       conference: NASA
       where: Glenn Research Center
       details: Talk given on original work on developing a semiring which encapsulates Contact Graph Routing, and using it to derive routing plans and storage requirements for a satellite network.
@@ -42,7 +42,7 @@
       details: Talk given on original work on generalizing valuation theory to non-commutative settings and deriving classifying objects for non-commutative geometric structures.
 - date: November 2022
   tks:
-    - name: “The Semiring Geometry of Routing Problems”
+    - name: "“The Semiring Geometry of Routing Problems”"
       conference: BUGCAT 2022
       where: Binghampton University
       details: Talk given on original work in parameterized routing.
