@@ -1,3 +1,9 @@
+- date: September 2024
+  tks:
+    - name: "Applications of the Geometry of Idempotent Semirings towards Deep Space Communications"
+      conference: Summer School on Tropical Linear Spaces
+      where: University of Tübingen
+      details: Talk given on original work using idempotent semirings and the algebraic path problem to transform infinite combinatorial problems that appear in satellite networking into computable convex optimization problems.
 - date: August 2024
   tks:
     - name: "What routes to Vegas stays in Vegas: Creating contact tables using the Nevada semiring"
